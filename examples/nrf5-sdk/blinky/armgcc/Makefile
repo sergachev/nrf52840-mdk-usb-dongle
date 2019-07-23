@@ -6,7 +6,7 @@ OUTPUT_DIRECTORY := _build
 USED_SOFTDEVICE = 0
 HW_VERSION := 52
 
-SDK_ROOT := ../../../../nrf_sdks/nRF5_SDK_15.0.0_a53641a
+SDK_ROOT := ../../../../nrf_sdks/nRF5_SDK_15.3.0_59ac345
 PROJ_DIR := ..
 
 $(OUTPUT_DIRECTORY)/nrf52840_xxaa.out: \
@@ -28,23 +28,23 @@ SRC_FILES += \
 # Include folders common to all targets
 INC_FOLDERS += \
   $(SDK_ROOT)/components \
-  $(SDK_ROOT)/components/libraries/experimental_memobj \
+  $(SDK_ROOT)/components/libraries/memobj \
   $(SDK_ROOT)/components/libraries/experimental_section_vars \
-  $(SDK_ROOT)/modules/nrfx/mdk \
-  $(SDK_ROOT)/modules/nrfx/hal \
   $(SDK_ROOT)/components/libraries/balloc \
-  $(SDK_ROOT)/components/libraries/experimental_log \
-  $(SDK_ROOT)/components/libraries/experimental_log/src \
   $(SDK_ROOT)/components/libraries/delay \
-  $(SDK_ROOT)/integration/nrfx \
   $(SDK_ROOT)/components/libraries/bsp \
-  $(SDK_ROOT)/components/drivers_nrf/nrf_soc_nosd \
-  $(PROJ_DIR)/config \
+  $(SDK_ROOT)/components/libraries/util \
+  $(SDK_ROOT)/components/libraries/log \
+  $(SDK_ROOT)/components/libraries/log/src \
   $(SDK_ROOT)/components/libraries/strerror \
+  $(SDK_ROOT)/components/drivers_nrf/nrf_soc_nosd \
   $(SDK_ROOT)/components/boards \
   $(SDK_ROOT)/components/toolchain/cmsis/include \
+  $(PROJ_DIR)/config \
+  $(SDK_ROOT)/integration/nrfx \
+  $(SDK_ROOT)/modules/nrfx/mdk \
+  $(SDK_ROOT)/modules/nrfx/hal \
   $(SDK_ROOT)/modules/nrfx \
   $(PROJ_DIR) \
-  $(SDK_ROOT)/components/libraries/util \
 
 include $(PROJ_DIR)/../Makefile.common
